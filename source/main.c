@@ -53,16 +53,16 @@ void libnx_getaddrinfo(const char *hostname, const char *port)
 }
 
 void libnx_gethostbyname(const char *hostname){
-	socketInitializeDefault();
+    socketInitializeDefault();
 
     int i;
-	struct hostent *he;
+    struct hostent *he;
     struct in_addr **addr_list;
 
     printf("\nCalling gethostbyname hostname: \"%s\":\n", hostname);
 
     if ((he = gethostbyname(hostname)) == NULL) {
-		herror("gethostbyname");
+        herror("gethostbyname");
     }
 
     printf("IP addresses for %s:\n", hostname);
